@@ -12,6 +12,10 @@
     "npm_pack": "cd dist/breadcrumb-lib && npm pack",
     "package": "npm run build_lib && npm run npm_pack"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smoldovansky/ng6-breadcrumb-lib.git"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.1.0",
