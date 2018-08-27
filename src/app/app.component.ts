@@ -13,13 +13,18 @@ export class AppComponent {
     breadcrumbService.addFriendlyNameForRoute('/comp1', 'Comp 1');
     breadcrumbService.addFriendlyNameForRouteRegex('^/comp1/comp[0-9]$', 'Comp 2');
     breadcrumbService.hideRoute('/comp1/comp2/comp3');
-    breadcrumbService.addCallbackForRouteRegex('/comp1/comp2/comp3/[0-9]', this.getName);
+    breadcrumbService.addCallbackForRouteRegex('/comp1/comp2/comp3/[0-9]', this.breadcrumbCallback(this));
   }
 
-  getName(id:string): string {
-    return 'Comp ' + id;
+  breadcrumbCallback(otherThis: AppComponent) : {(id:string):string} 
+  {return function(id:string) {
+    return otherThis.title + ':Comp ' + id;
+    }
   }
 }
+
+
+
 @Component({
   selector: 'comp1',
   template: `

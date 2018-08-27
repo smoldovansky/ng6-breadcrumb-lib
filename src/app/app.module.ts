@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { Component1, Component2, Component3, Component4 } from './app.component';
 import { routingModule, appRoutingProviders }  from './app.routing';
-import { BreadcrumbLibModule} from 'breadcrumb-lib'
+import { BreadcrumbLibModule} from 'breadcrumb-lib';
 
 @NgModule({
   declarations: [
