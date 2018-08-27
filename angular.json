@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "breadcrumb-lib": {
+      "root": "projects/breadcrumb-lib",
+      "sourceRoot": "projects/breadcrumb-lib/src",
+      "projectType": "library",
+      "prefix": "ng6",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/breadcrumb-lib/tsconfig.lib.json",
+            "project": "projects/breadcrumb-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/breadcrumb-lib/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/breadcrumb-lib/src/test.ts",
+            "tsConfig": "projects/breadcrumb-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/breadcrumb-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/breadcrumb-lib/tsconfig.lib.json",
+              "projects/breadcrumb-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "breadcrumb-lib-app"
